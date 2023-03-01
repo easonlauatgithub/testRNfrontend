@@ -1,0 +1,10 @@
+npm install
+cd  ios
+pod install
+
+npx react-native start
+
+npx react-native run-ios --simulator="iPhone 14 Pro"
+
+adb -s 8PQG45YLKZAM95QS reverse tcp:8081 tcp:8081
+npx react-native run-android
