@@ -34,6 +34,7 @@ import {
     RetOfUserInfoFromJSON,
     RetOfUserInfoToJSON,
 } from '../models';
+import { AppApiClient } from '../../../../apis/netcoreApiClient';
 
 export interface AppServerForgotPasswordBaseRequest {
     domainRootId?: number;
@@ -121,6 +122,13 @@ export class AppServerApi extends runtime.BaseAPI {
 
     /**
      */
+    async appServerIndex(initOverrides?: RequestInit | runtime.InitOverideFunction): Promise<MobileViewModel> {
+        const response = await this.appServerIndexRaw(initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
     async appServerIndexRaw(initOverrides?: RequestInit | runtime.InitOverideFunction): Promise<runtime.ApiResponse<MobileViewModel>> {
         const queryParameters: any = {};
 
@@ -134,13 +142,6 @@ export class AppServerApi extends runtime.BaseAPI {
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => MobileViewModelFromJSON(jsonValue));
-    }
-
-    /**
-     */
-    async appServerIndex(initOverrides?: RequestInit | runtime.InitOverideFunction): Promise<MobileViewModel> {
-        const response = await this.appServerIndexRaw(initOverrides);
-        return await response.value();
     }
 
     /**

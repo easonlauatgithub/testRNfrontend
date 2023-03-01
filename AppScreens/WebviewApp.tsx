@@ -24,6 +24,7 @@ const WebviewApp = ({ route, navigation }) => {
 
   console.log('WebviewApp body', route.params?.url);
   let url = route.params?.url;
+  url = "https://yahoo.com.hk";
   url = url || "http://192.168.112.6";
 
   let INJECTED_JAVASCRIPT = "";

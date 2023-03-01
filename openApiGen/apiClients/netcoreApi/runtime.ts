@@ -116,11 +116,15 @@ export class BaseAPI {
     protected async request(context: RequestOpts, initOverrides?: RequestInit | InitOverideFunction): Promise<Response> {
         const { url, init } = await this.createFetchParams(context, initOverrides);
         const response = await this.fetchApi(url, init);
+        console.log("easontesting - runtime request");
+        console.log(url);
+        console.log(response.status);
         if (response.status >= 200 && response.status < 300) {
             return response;
         }
         throw new ResponseError(response, 'Response returned an error code');
     }
+
 
     private async createFetchParams(context: RequestOpts, initOverrides?: RequestInit | InitOverideFunction) {
         let url = this.configuration.basePath + context.path;
@@ -177,7 +181,7 @@ export class BaseAPI {
                 }) || fetchParams;
             }
         }
-        let response = await (this.configuration.fetchApi || fetch)(fetchParams.url, fetchParams.init);
+        let response = await (this.configuration.fetchApi || fetch)(fetchParams.url, fetchParams.init);        
         for (const middleware of this.middleware) {
             if (middleware.post) {
                 response = await middleware.post({
@@ -338,9 +342,13 @@ export interface ResponseTransformer<T> {
 
 export class JSONApiResponse<T> {
     constructor(public raw: Response, private transformer: ResponseTransformer<T> = (jsonValue: any) => jsonValue) {}
-
+    
     async value(): Promise<T> {
-        return this.transformer(await this.raw.json());
+        console.log("easontesting - runtime JSONApiResponse");
+        console.log(this.raw.status);
+        return this.transformer(
+            await this.raw.json()
+        );
     }
 }
 

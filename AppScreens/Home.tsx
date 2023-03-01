@@ -74,7 +74,7 @@ function Home({ navigation }) {
         justifyContent: "space-between", //"space-around",
         flexWrap: "wrap"
       }]}>
-        <View style={{ flexDirection: "row", flexWrap: "wrap",backgroundColor:'white', borderWidth:4,borderColor:"white" }}>
+        <View style={{ flexDirection: "row", flexWrap: "wrap",backgroundColor:'white', borderWidth:1,borderColor:"white" }}>
           <View style={[styles.flexItem1third, { justifyContent: "center", alignContent: "center" }]} >
             <TouchableOpacity onPress={() => {
               navigation.navigate("WebviewApp", { url: userInfo.webappUrl });
@@ -82,12 +82,13 @@ function Home({ navigation }) {
               <ImageBackground
                 resizeMode="cover"
                 style={{ height: "100%", justifyContent: 'flex-end' }}
-                source={require("../images/icon180.png")}
+                // source={require("../images/icon180.png")}
+                source={require("../images/icon180-2.jpeg")}
               >
               </ImageBackground>
             </TouchableOpacity>
           </View>
-          <View style={[styles.flexItem2third, { backgroundColor: '#c0eb34' }]}>
+          <View style={[styles.flexItem2third, { backgroundColor: ThemeStyles.container.backgroundColor }]}>
             <Text style={{ fontWeight: "bold", backgroundColor: 'rgba(52, 52, 52, 0.8)', color: "white", textAlign: "center", textAlignVertical: "center", height: 30, lineHeight: 30 }}>
               {title}
             </Text>
@@ -96,15 +97,12 @@ function Home({ navigation }) {
             </Text>
           </View>
         </View>
-
         {firstLayer.map(item => {
           return <Promos key={item.id} item={item} style={styles.flexLayer1} clickListener={onItemClicked}></Promos>
         })}
-
         {secondLayer.map(item => {
           return <Promos key={item.id} item={item} style={styles.flexLayer2} clickListener={onItemClicked}></Promos>
         })}
-
         {thirdLayer.map(item => {
           return <Promos key={item.id} item={item} style={styles.flexLayer3} clickListener={onItemClicked}></Promos>
         })}
@@ -114,11 +112,11 @@ function Home({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  flexItem1third: { height: 100, flexBasis:"25%" },
+  flexItem1third: { height: 100, flexBasis:"25%"},
   flexItem2third: { height: 100, flexBasis:"75%"},
-  flexLayer3: { height: 100, flexBasis: "33.3%" },
-  flexLayer1: { height: 200, flexBasis: "100%" },
-  flexLayer2: { height: 160, flexBasis: "50%" }
+  flexLayer3: { height: 100, flexBasis: "33.3%" , borderWidth:1,borderColor:"white" },
+  flexLayer1: { height: 200, flexBasis: "100%" , borderWidth:1,borderColor:"white" },
+  flexLayer2: { height: 160, flexBasis: "50%" , borderWidth:1,borderColor:"white" }
 });
 
 export default Home;

@@ -1,7 +1,11 @@
 import { StyleSheet } from "react-native";
 import { color } from "react-native-reanimated";
 
+// const backgroundColor = "#c0eb34";
+const backgroundColor = "#dce8e7";
+
 export const ThemeStyles = StyleSheet.create({
+    
     heavyBackgroundColor:{
         backgroundColor:"#5c8a12"
     },
@@ -10,28 +14,28 @@ export const ThemeStyles = StyleSheet.create({
     },
     safeArea: {
         flex: 1,
-        backgroundColor: "#c0eb34"
+        backgroundColor: backgroundColor
     },
     themeBackground: {
-        backgroundColor: '#c0eb34'
+        backgroundColor: backgroundColor
     },
     themeBackgroundTextColor:{
         color:"black"
     },
     headerTitleStyle: {
-        backgroundColor: '#c0eb34'
+        backgroundColor: backgroundColor
     },
     headerStyle: {
-        backgroundColor: '#c0eb34'
+        backgroundColor: backgroundColor
     },
     tabarItemStyle: {
-        backgroundColor: '#c0eb34'
+        backgroundColor: backgroundColor
     },
     tabIconColor: { color: "white" },
     container: {
         flex: 1,
         padding: 2,
-        backgroundColor: "#c0eb34"
+        backgroundColor: backgroundColor
     },
-    labelBackground:{backgroundColor:"#c0eb34",color:"black"}
+    labelBackground:{backgroundColor:backgroundColor,color:"black"}
 })
