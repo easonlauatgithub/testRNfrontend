@@ -1,0 +1,1 @@
+npx openapi-generator-cli generate -i .\swagger-from-server.json -g typescript-fetch -o .\apiClients\netcoreApi

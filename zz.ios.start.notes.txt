@@ -1,0 +1,5 @@
+set up environment
+install nodejs at least 14 LTS 
+need start metro
+
+need run npx react-native run-ios

@@ -1,0 +1,1 @@
+npm install --save-dev @openapitools/openapi-generator-cli

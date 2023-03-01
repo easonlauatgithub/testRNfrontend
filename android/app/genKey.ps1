@@ -1,0 +1,1 @@
+keytool -genkeypair -v -storetype PKCS12 -keystore oknko-upload-key.keystore -alias oknko-android-key -keyalg RSA -keysize 2048 -validity 10000

@@ -1,0 +1,6291 @@
+{
+  "x-generator": "NSwag v11.17.0.0 (NJsonSchema v9.10.42.0 (Newtonsoft.Json v13.0.0.0))",
+  "swagger": "2.0",
+  "info": {
+    "title": "My Title",
+    "version": "1.0.0"
+  },
+  "host": "hknhk.com",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/api/AppServer/Register": {
+      "post": {
+        "tags": [
+          "AppServer"
+        ],
+        "operationId": "AppServer_Register",
+        "parameters": [
+          {
+            "name": "register",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Register"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RetOfUserInfo"
+            }
+          }
+        }
+      }
+    },
+    "/api/AppServer/Login": {
+      "post": {
+        "tags": [
+          "AppServer"
+        ],
+        "operationId": "AppServer_Login",
+        "parameters": [
+          {
+            "name": "info",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/LoginInfo"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RetOfUserInfo"
+            }
+          }
+        }
+      }
+    },
+    "/api/AppServer/Logout": {
+      "post": {
+        "tags": [
+          "AppServer"
+        ],
+        "operationId": "AppServer_Logout",
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "/api/AppServer/UpdateDeviceInfo": {
+      "post": {
+        "tags": [
+          "AppServer"
+        ],
+        "operationId": "AppServer_UpdateDeviceInfo",
+        "parameters": [
+          {
+            "name": "reg",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/DeviceReg"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "/api/AppServer/Index": {
+      "get": {
+        "tags": [
+          "AppServer"
+        ],
+        "operationId": "AppServer_Index",
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/MobileViewModel"
+            }
+          }
+        }
+      }
+    },
+    "/api/AppServer/ForgotPasswordBase": {
+      "post": {
+        "tags": [
+          "AppServer"
+        ],
+        "operationId": "AppServer_ForgotPasswordBase",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "domainRootId",
+            "in": "query",
+            "format": "int64",
+            "x-nullable": false
+          },
+          {
+            "type": "string",
+            "name": "surname",
+            "in": "query",
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "givenName",
+            "in": "query",
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "gender",
+            "in": "query",
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "email",
+            "in": "query",
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "phoneDistrictNum",
+            "in": "query",
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "phoneNumber",
+            "in": "query",
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "password",
+            "in": "query",
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/MessageViewModel"
+            }
+          }
+        }
+      }
+    },
+    "/api/Customer/ForgotLogin": {
+      "post": {
+        "tags": [
+          "Customer"
+        ],
+        "operationId": "Customer_ForgotLogin",
+        "parameters": [
+          {
+            "name": "info",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Register"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/MessageViewModel"
+            }
+          }
+        }
+      }
+    },
+    "/api/Customer/Register": {
+      "post": {
+        "tags": [
+          "Customer"
+        ],
+        "operationId": "Customer_Register",
+        "parameters": [
+          {
+            "name": "register",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Register"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RetOfUserInfo"
+            }
+          }
+        }
+      }
+    },
+    "/api/Customer/Login": {
+      "post": {
+        "tags": [
+          "Customer"
+        ],
+        "operationId": "Customer_Login",
+        "parameters": [
+          {
+            "name": "loginInfo",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/LoginInfo"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RetOfUserInfo"
+            }
+          }
+        }
+      }
+    },
+    "/api/Customer/Logout": {
+      "post": {
+        "tags": [
+          "Customer"
+        ],
+        "operationId": "Customer_Logout",
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "/api/Customer/GetProfile": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "operationId": "Customer_GetProfile",
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RetOfUserInfo"
+            }
+          }
+        }
+      }
+    },
+    "/api/Customer/GetQA": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "operationId": "Customer_GetQA",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "page",
+            "in": "query",
+            "required": true,
+            "format": "int32",
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "path",
+            "in": "query",
+            "required": true,
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "query",
+            "in": "query",
+            "required": true,
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/FilterResultOfQa"
+            }
+          }
+        }
+      }
+    },
+    "/api/Customer/AddQA": {
+      "post": {
+        "tags": [
+          "Customer"
+        ],
+        "operationId": "Customer_AddQA",
+        "parameters": [
+          {
+            "name": "qa",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Qa"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Qa"
+            }
+          }
+        }
+      }
+    },
+    "/api/Customer/GetCategories": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "operationId": "Customer_GetCategories",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "typeCode",
+            "in": "query",
+            "required": true,
+            "format": "int32",
+            "x-nullable": false
+          },
+          {
+            "type": "string",
+            "name": "uid",
+            "in": "query",
+            "required": true,
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/CatGroup"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Customer/GetPrices": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "operationId": "Customer_GetPrices",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PriceInfo"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Customer/GetPostCatLabels": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "operationId": "Customer_GetPostCatLabels",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "postId",
+            "in": "query",
+            "required": true,
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "file"
+            }
+          }
+        }
+      }
+    },
+    "/api/Customer/GetPostCats": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "operationId": "Customer_GetPostCats",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "postId",
+            "in": "query",
+            "required": true,
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "file"
+            }
+          }
+        }
+      }
+    },
+    "/api/Customer/AddToCart": {
+      "post": {
+        "tags": [
+          "Customer"
+        ],
+        "operationId": "Customer_AddToCart",
+        "parameters": [
+          {
+            "name": "item",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CartRecord"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RetOfCartRecord"
+            }
+          }
+        }
+      }
+    },
+    "/api/Customer/RemoveFromCart": {
+      "post": {
+        "tags": [
+          "Customer"
+        ],
+        "operationId": "Customer_RemoveFromCart",
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int64"
+              }
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "/api/Customer/UpdateCartItem": {
+      "post": {
+        "tags": [
+          "Customer"
+        ],
+        "operationId": "Customer_UpdateCartItem",
+        "parameters": [
+          {
+            "name": "item",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CartRecord"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RetOfCartRecord"
+            }
+          }
+        }
+      }
+    },
+    "/api/Customer/AddOrders": {
+      "post": {
+        "tags": [
+          "Customer"
+        ],
+        "operationId": "Customer_AddOrders",
+        "parameters": [
+          {
+            "name": "info",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/MasterOrder"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/RetOfOrderInfo"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Customer/GetOrders": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "operationId": "Customer_GetOrders",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "format": "int64",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/OrderDetail"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Customer/GetOrderDetail": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "operationId": "Customer_GetOrderDetail",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "format": "int64",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/OrderDetailViewModel"
+            }
+          }
+        }
+      }
+    },
+    "/api/Customer/GetOrderList": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "operationId": "Customer_GetOrderList",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "page",
+            "in": "query",
+            "required": true,
+            "format": "int32",
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/FilterResultOfOrderDetail"
+            }
+          }
+        }
+      }
+    },
+    "/api/Customer/AddContact": {
+      "post": {
+        "tags": [
+          "Customer"
+        ],
+        "operationId": "Customer_AddContact",
+        "parameters": [
+          {
+            "name": "contact",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Contact"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RetOfContact"
+            }
+          }
+        }
+      }
+    },
+    "/api/Customer/RemoveContact": {
+      "post": {
+        "tags": [
+          "Customer"
+        ],
+        "operationId": "Customer_RemoveContact",
+        "parameters": [
+          {
+            "name": "contactId",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "/api/Customer/GetContacts": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "operationId": "Customer_GetContacts",
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Contact"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Customer/GetContactsPaged": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "operationId": "Customer_GetContactsPaged",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "page",
+            "in": "query",
+            "required": true,
+            "format": "int32",
+            "x-nullable": true
+          },
+          {
+            "type": "array",
+            "name": "catId",
+            "in": "query",
+            "collectionFormat": "multi",
+            "x-nullable": true,
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/FilterResultOfContact"
+            }
+          }
+        }
+      }
+    },
+    "/api/Customer/GetPickupLlocations": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "operationId": "Customer_GetPickupLlocations",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "catId",
+            "in": "query",
+            "required": true,
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Contact"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Customer/GetPickupContactById": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "operationId": "Customer_GetPickupContactById",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Contact"
+            }
+          }
+        }
+      }
+    },
+    "/api/Customer/GetCartItems": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "operationId": "Customer_GetCartItems",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "suid",
+            "in": "query",
+            "required": true,
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/FilterResultOfCartItemDetailGroup"
+            }
+          }
+        }
+      }
+    },
+    "/api/Customer/GetLocalCartItems": {
+      "post": {
+        "tags": [
+          "Customer"
+        ],
+        "operationId": "Customer_GetLocalCartItems",
+        "parameters": [
+          {
+            "name": "cartItems",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/CartRecord"
+              }
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/FilterResultOfCartItemDetailGroup"
+            }
+          }
+        }
+      }
+    },
+    "/api/Customer/Ping": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "operationId": "Customer_Ping",
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {}
+          }
+        }
+      }
+    },
+    "/api/Customer/ForgotPasswordBase": {
+      "post": {
+        "tags": [
+          "Customer"
+        ],
+        "operationId": "Customer_ForgotPasswordBase",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "domainRootId",
+            "in": "query",
+            "format": "int64",
+            "x-nullable": false
+          },
+          {
+            "type": "string",
+            "name": "surname",
+            "in": "query",
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "givenName",
+            "in": "query",
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "gender",
+            "in": "query",
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "email",
+            "in": "query",
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "phoneDistrictNum",
+            "in": "query",
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "phoneNumber",
+            "in": "query",
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "password",
+            "in": "query",
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/MessageViewModel"
+            }
+          }
+        }
+      }
+    },
+    "/api/MemBase": {
+      "post": {
+        "tags": [
+          "MemBase"
+        ],
+        "operationId": "MemBase_ForgotPasswordBase",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "domainRootId",
+            "in": "query",
+            "format": "int64",
+            "x-nullable": false
+          },
+          {
+            "type": "string",
+            "name": "surname",
+            "in": "query",
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "givenName",
+            "in": "query",
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "gender",
+            "in": "query",
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "email",
+            "in": "query",
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "phoneDistrictNum",
+            "in": "query",
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "phoneNumber",
+            "in": "query",
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "password",
+            "in": "query",
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/MessageViewModel"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/AddPostLink": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_AddPostLink",
+        "parameters": [
+          {
+            "name": "link",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PostLink"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RetOfPostLink"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/RemovePostLink": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_RemovePostLink",
+        "parameters": [
+          {
+            "name": "link",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PostLink"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RetOfPostLink"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/GetPostLinks": {
+      "get": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_GetPostLinks",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "postId",
+            "in": "query",
+            "required": true,
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PostLink"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/UpdatePostLink": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_UpdatePostLink",
+        "parameters": [
+          {
+            "name": "link",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PostLink"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RetOfPostLink"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/UpdatePostLinkImg": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_UpdatePostLinkImg",
+        "parameters": [
+          {
+            "name": "link",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PostLink"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RetOfPostLink"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/GetQA": {
+      "get": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_GetQA",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "page",
+            "in": "query",
+            "required": true,
+            "format": "int32",
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "path",
+            "in": "query",
+            "required": true,
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "query",
+            "in": "query",
+            "required": true,
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "toUserId",
+            "in": "query",
+            "required": true,
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/FilterResultOfQa"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/AddQA": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_AddQA",
+        "parameters": [
+          {
+            "name": "qa",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Qa"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Qa"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/GetShopList": {
+      "get": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_GetShopList",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "page",
+            "in": "query",
+            "required": true,
+            "format": "int32",
+            "x-nullable": true
+          },
+          {
+            "type": "array",
+            "name": "cat",
+            "in": "query",
+            "collectionFormat": "multi",
+            "x-nullable": true,
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "type": "array",
+            "name": "tag",
+            "in": "query",
+            "collectionFormat": "multi",
+            "x-nullable": true,
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "type": "array",
+            "name": "sid",
+            "in": "query",
+            "collectionFormat": "multi",
+            "x-nullable": true,
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RetOfFilterResultOfShopInfo"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/GetShopByUid": {
+      "get": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_GetShopByUid",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "uid",
+            "in": "query",
+            "required": true,
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RetOfShopInfo"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/GetShopViewModelByUid": {
+      "get": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_GetShopViewModelByUid",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "uid",
+            "in": "query",
+            "required": true,
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RetOfObject"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/UpdateContactType": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_UpdateContactType",
+        "parameters": [
+          {
+            "name": "contact",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Contact"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RetOfContact"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/CreateShop": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_CreateShop",
+        "parameters": [
+          {
+            "name": "info",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UserInfo"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RetOfShopInfo"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/UpdateShopCat": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_UpdateShopCat",
+        "parameters": [
+          {
+            "name": "shop",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ShopBase"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RetOfShopInfo"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/AddMultiFiles": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_AddMultiFiles",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "uid",
+            "in": "query",
+            "required": true,
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RetOfListOfFileRecord"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/UpdateShopLogo": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_UpdateShopLogo",
+        "parameters": [
+          {
+            "name": "shop",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ShopBase"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RetOfShopInfo"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/UpdateShop": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_UpdateShop",
+        "parameters": [
+          {
+            "name": "shop",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ShopBase"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RetOfShopInfo"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/RemoveRoleFromUser": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_RemoveRoleFromUser",
+        "parameters": [
+          {
+            "name": "info",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UserRoleInfo"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/AddRoleToUser": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_AddRoleToUser",
+        "parameters": [
+          {
+            "name": "info",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UserRoleInfo"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RetOfUserRoleInfo"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/AddRole": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_AddRole",
+        "parameters": [
+          {
+            "name": "info",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RoleInfo"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RetOfRoleInfo"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/GetAllRoles": {
+      "get": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_GetAllRoles",
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/RoleInfo"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/UpdateRole": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_UpdateRole",
+        "parameters": [
+          {
+            "name": "info",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RoleInfo"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/AddCatConfigLabel": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_AddCatConfigLabel",
+        "parameters": [
+          {
+            "name": "label",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CatConfigLabel"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RetOfCatConfigLabel"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/GetCatConfigLabels": {
+      "get": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_GetCatConfigLabels",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "catType",
+            "in": "query",
+            "required": true,
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/CatLabelGroup"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/GetShopInfoLabelByCatId": {
+      "get": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_GetShopInfoLabelByCatId",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "catId",
+            "in": "query",
+            "required": true,
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CatLabelGroup"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/GetShopInfoLabels": {
+      "get": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_GetShopInfoLabels",
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "$ref": "#/definitions/CatLabelGroup"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/RemoveCatConfigLabel": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_RemoveCatConfigLabel",
+        "parameters": [
+          {
+            "name": "label",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CatConfigLabel"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/UpdateOrderBase": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_UpdateOrderBase",
+        "parameters": [
+          {
+            "name": "info",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/OrderInfo"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RetOfOrderInfo"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/SetOrderActive": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_SetOrderActive",
+        "parameters": [
+          {
+            "name": "info",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/OrderInfo"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RetOfOrderInfo"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/SetOrderPaid": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_SetOrderPaid",
+        "parameters": [
+          {
+            "name": "info",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/OrderInfo"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RetOfOrderInfo"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/SetPaymentPaid": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_SetPaymentPaid",
+        "parameters": [
+          {
+            "name": "info",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Payment"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/UpdateOrderShopMsg": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_UpdateOrderShopMsg",
+        "parameters": [
+          {
+            "name": "info",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/OrderInfo"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RetOfOrderInfo"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/SetOrderOfferReady": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_SetOrderOfferReady",
+        "parameters": [
+          {
+            "name": "info",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/OrderInfo"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RetOfOrderInfo"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/AcceptQuotation": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_AcceptQuotation",
+        "parameters": [
+          {
+            "name": "info",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/OrderInfo"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RetOfOrderInfo"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/AddOrderExtra": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_AddOrderExtra",
+        "parameters": [
+          {
+            "name": "label",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/OrderCatLabel"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RetOfOrderCatLabel"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/GetOrderExtras": {
+      "get": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_GetOrderExtras",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "orderId",
+            "in": "query",
+            "required": true,
+            "format": "int64",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/CatLabelGroup"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/RemoveOrderExtra": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_RemoveOrderExtra",
+        "parameters": [
+          {
+            "name": "label",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/OrderCatLabel"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/AddPost": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_AddPost",
+        "parameters": [
+          {
+            "name": "newrecord",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PostRecord"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RetOfPostRecord"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/GetPostProps": {
+      "get": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_GetPostProps",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "postId",
+            "in": "query",
+            "required": true,
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PostProp"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/AddPostProps": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_AddPostProps",
+        "parameters": [
+          {
+            "name": "props",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PostProp"
+              }
+            },
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "postId",
+            "in": "query",
+            "required": true,
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RetOfListOfPostProp"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/RemoveFileFromPost": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_RemoveFileFromPost",
+        "parameters": [
+          {
+            "name": "file",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/FileRecord"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RetOfListOfFileRecord"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/UpdatePostFile": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_UpdatePostFile",
+        "parameters": [
+          {
+            "name": "file",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/FileRecord"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RetOfListOfFileRecord"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/AddFileToPost": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_AddFileToPost",
+        "parameters": [
+          {
+            "name": "file",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/FileRecord"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RetOfInt64"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/GetPriceInfos": {
+      "get": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_GetPriceInfosAll",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "postId",
+            "in": "query",
+            "required": true,
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PriceInfo"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_GetPriceInfos",
+        "parameters": [
+          {
+            "name": "priceIds",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int64"
+              }
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PriceInfo"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/AddPriceInfos": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_AddPriceInfos",
+        "parameters": [
+          {
+            "name": "prices",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PriceInfo"
+              }
+            },
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "postId",
+            "in": "query",
+            "required": true,
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RetOfListOfPriceInfo"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/SetPriceInfos": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_SetPriceInfos",
+        "parameters": [
+          {
+            "name": "prices",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PriceInfo"
+              }
+            },
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "postId",
+            "in": "query",
+            "required": true,
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RetOfListOfPriceInfo"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/GetPostById": {
+      "get": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_GetPostById",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/PostRecord"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/UpdatePostBase": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_UpdatePostBase",
+        "parameters": [
+          {
+            "name": "postbase",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PostBase"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RetOfPostRecord"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/GetOwnerFile": {
+      "get": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_GetOwnerFile",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "filename",
+            "in": "query",
+            "required": true,
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "file"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/AddPostCatLabel": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_AddPostCatLabel",
+        "parameters": [
+          {
+            "name": "labels",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PsCatLabel"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/PsCatLabel"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/GetPostCatLabels": {
+      "get": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_GetPostCatLabels",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "postId",
+            "in": "query",
+            "required": true,
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/CatLabelGroup"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/RemovePostCatLabel": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_RemovePostCatLabel",
+        "parameters": [
+          {
+            "name": "catLabel",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PsCatLabel"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/GetPostCats": {
+      "get": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_GetPostCats",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "postId",
+            "in": "query",
+            "required": true,
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/CategoryPair"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/RemovePostCat": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_RemovePostCat",
+        "parameters": [
+          {
+            "name": "psCatId",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PsCatId"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/AddPostCat": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_AddPostCat",
+        "parameters": [
+          {
+            "name": "pcat",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PsCatId"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/PsCatId"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/GetShopCatTag": {
+      "get": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_GetShopCatTag",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "shopId",
+            "in": "query",
+            "required": true,
+            "format": "int64",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/CategoryPair"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/RemoveShopCatTag": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_RemoveShopCatTag",
+        "parameters": [
+          {
+            "name": "tag",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ShopCatTag"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/AddShopCatTag": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_AddShopCatTag",
+        "parameters": [
+          {
+            "name": "tag",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ShopCatTag"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ShopCatTag"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/UpdateShopCatLabel": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_UpdateShopCatLabel",
+        "parameters": [
+          {
+            "name": "label",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ShopCatLabel"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RetOfFrontendCatLabel"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/AddShopCatLabel": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_AddShopCatLabel",
+        "parameters": [
+          {
+            "name": "label",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ShopCatLabel"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RetOfShopCatLabel"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/GetShopCatLabels": {
+      "get": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_GetShopCatLabels",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "uid",
+            "in": "query",
+            "required": true,
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/CatLabelGroup"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/GetShopCatLabelsGrouped": {
+      "get": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_GetShopCatLabelsGrouped",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "uid",
+            "in": "query",
+            "required": true,
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/CatGroupedLabels"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/RemoveShopCatLabel": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_RemoveShopCatLabel",
+        "parameters": [
+          {
+            "name": "label",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ShopCatLabel"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/AddCategory": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_AddCategory",
+        "parameters": [
+          {
+            "name": "newcat",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Category"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RetOfCategory"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/UpdateCategory": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_UpdateCategory",
+        "parameters": [
+          {
+            "name": "cat",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Category"
+            },
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RetOfCategory"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/GetCategories": {
+      "get": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_GetCategories",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "typeCode",
+            "in": "query",
+            "required": true,
+            "format": "int32",
+            "x-nullable": false
+          },
+          {
+            "type": "string",
+            "name": "uid",
+            "in": "query",
+            "required": true,
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/CatGroup"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/GetUserPosts": {
+      "get": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_GetUserPosts",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "page",
+            "in": "query",
+            "required": true,
+            "format": "int32",
+            "x-nullable": true
+          },
+          {
+            "type": "array",
+            "name": "cat",
+            "in": "query",
+            "collectionFormat": "multi",
+            "x-nullable": true,
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "type": "array",
+            "name": "tag",
+            "in": "query",
+            "collectionFormat": "multi",
+            "x-nullable": true,
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "type": "array",
+            "name": "state",
+            "in": "query",
+            "collectionFormat": "multi",
+            "x-nullable": true,
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PostRecord"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/GetShopItems": {
+      "get": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_GetShopItems",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "page",
+            "in": "query",
+            "required": true,
+            "format": "int32",
+            "x-nullable": true
+          },
+          {
+            "type": "array",
+            "name": "cat",
+            "in": "query",
+            "collectionFormat": "multi",
+            "x-nullable": true,
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "type": "array",
+            "name": "tag",
+            "in": "query",
+            "collectionFormat": "multi",
+            "x-nullable": true,
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "type": "string",
+            "name": "uid",
+            "in": "query",
+            "required": true,
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "keyword",
+            "in": "query",
+            "required": true,
+            "x-nullable": true
+          },
+          {
+            "type": "array",
+            "name": "prid",
+            "in": "query",
+            "collectionFormat": "multi",
+            "x-nullable": true,
+            "items": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/FilterResultOfPostRecord"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/GetUserFiles": {
+      "get": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_GetUserFiles",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "page",
+            "in": "query",
+            "required": true,
+            "format": "int32",
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "uid",
+            "in": "query",
+            "required": true,
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RetOfFilterResultOfFileRecord"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/GetDashProfile": {
+      "get": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_GetDashProfile",
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RetOfDashProfile"
+            }
+          }
+        }
+      }
+    },
+    "/api/Member/ForgotPasswordBase": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "operationId": "Member_ForgotPasswordBase",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "domainRootId",
+            "in": "query",
+            "format": "int64",
+            "x-nullable": false
+          },
+          {
+            "type": "string",
+            "name": "surname",
+            "in": "query",
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "givenName",
+            "in": "query",
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "gender",
+            "in": "query",
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "email",
+            "in": "query",
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "phoneDistrictNum",
+            "in": "query",
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "phoneNumber",
+            "in": "query",
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "password",
+            "in": "query",
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/MessageViewModel"
+            }
+          }
+        }
+      }
+    },
+    "/Spa/GetPostById": {
+      "get": {
+        "tags": [
+          "Spa"
+        ],
+        "operationId": "Spa_GetPostById",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/PostRecord"
+            }
+          }
+        }
+      }
+    },
+    "/Spa/GetArticleById": {
+      "get": {
+        "tags": [
+          "Spa"
+        ],
+        "operationId": "Spa_GetArticleById",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/PostRecord"
+            }
+          }
+        }
+      }
+    },
+    "/Spa/Policies": {
+      "get": {
+        "tags": [
+          "Spa"
+        ],
+        "operationId": "Spa_Policies",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "scode",
+            "in": "query",
+            "required": true,
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PostRecord"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Spa/GetShopInfo": {
+      "get": {
+        "tags": [
+          "Spa"
+        ],
+        "operationId": "Spa_GetShopInfo",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "scode",
+            "in": "query",
+            "required": true,
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ShopsViewModel"
+            }
+          }
+        }
+      }
+    },
+    "/Spa/GetPagedInfos": {
+      "get": {
+        "tags": [
+          "Spa"
+        ],
+        "operationId": "Spa_GetPagedInfos",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "srcShopCode",
+            "in": "query",
+            "required": true,
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "scode",
+            "in": "query",
+            "required": true,
+            "x-nullable": true
+          },
+          {
+            "type": "integer",
+            "name": "catSubType",
+            "in": "query",
+            "required": true,
+            "format": "int32",
+            "x-nullable": false
+          },
+          {
+            "type": "integer",
+            "name": "page",
+            "in": "query",
+            "required": true,
+            "format": "int32",
+            "x-nullable": true
+          },
+          {
+            "type": "integer",
+            "name": "pageSize",
+            "in": "query",
+            "required": true,
+            "format": "int32",
+            "x-nullable": true
+          },
+          {
+            "type": "array",
+            "name": "cat",
+            "in": "query",
+            "collectionFormat": "multi",
+            "x-nullable": true,
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "type": "array",
+            "name": "tag",
+            "in": "query",
+            "collectionFormat": "multi",
+            "x-nullable": true,
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "type": "string",
+            "name": "keyword",
+            "in": "query",
+            "required": true,
+            "x-nullable": true
+          },
+          {
+            "type": "boolean",
+            "name": "getLinks",
+            "in": "query",
+            "required": true,
+            "x-nullable": true
+          },
+          {
+            "type": "array",
+            "name": "prid",
+            "in": "query",
+            "collectionFormat": "multi",
+            "x-nullable": true,
+            "items": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ShopsViewModel"
+            }
+          }
+        }
+      }
+    },
+    "/Spa/GetShopItems": {
+      "get": {
+        "tags": [
+          "Spa"
+        ],
+        "operationId": "Spa_GetShopItems",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "scode",
+            "in": "query",
+            "required": true,
+            "x-nullable": true
+          },
+          {
+            "type": "integer",
+            "name": "page",
+            "in": "query",
+            "required": true,
+            "format": "int32",
+            "x-nullable": true
+          },
+          {
+            "type": "array",
+            "name": "cat",
+            "in": "query",
+            "collectionFormat": "multi",
+            "x-nullable": true,
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "type": "array",
+            "name": "tag",
+            "in": "query",
+            "collectionFormat": "multi",
+            "x-nullable": true,
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "type": "string",
+            "name": "keyword",
+            "in": "query",
+            "required": true,
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ShopsViewModel"
+            }
+          }
+        }
+      }
+    },
+    "/Spa/GetArticles": {
+      "get": {
+        "tags": [
+          "Spa"
+        ],
+        "operationId": "Spa_GetArticles",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "scode",
+            "in": "query",
+            "required": true,
+            "x-nullable": true
+          },
+          {
+            "type": "integer",
+            "name": "page",
+            "in": "query",
+            "required": true,
+            "format": "int32",
+            "x-nullable": true
+          },
+          {
+            "type": "array",
+            "name": "cat",
+            "in": "query",
+            "collectionFormat": "multi",
+            "x-nullable": true,
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "type": "array",
+            "name": "tag",
+            "in": "query",
+            "collectionFormat": "multi",
+            "x-nullable": true,
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "type": "string",
+            "name": "keyword",
+            "in": "query",
+            "required": true,
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ShopsViewModel"
+            }
+          }
+        }
+      }
+    },
+    "/Spa/ForgotPasswordBase": {
+      "post": {
+        "tags": [
+          "Spa"
+        ],
+        "operationId": "Spa_ForgotPasswordBase",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "domainRootId",
+            "in": "query",
+            "format": "int64",
+            "x-nullable": false
+          },
+          {
+            "type": "string",
+            "name": "surname",
+            "in": "query",
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "givenName",
+            "in": "query",
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "gender",
+            "in": "query",
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "email",
+            "in": "query",
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "phoneDistrictNum",
+            "in": "query",
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "phoneNumber",
+            "in": "query",
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "password",
+            "in": "query",
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/MessageViewModel"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Register": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "domainRootId"
+      ],
+      "properties": {
+        "domainRootId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "surname": {
+          "type": "string"
+        },
+        "givenName": {
+          "type": "string"
+        },
+        "gender": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "phoneDistrictNum": {
+          "type": "string"
+        },
+        "phoneNumber": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    "RetOfUserInfo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ok"
+      ],
+      "properties": {
+        "ok": {
+          "type": "boolean"
+        },
+        "value": {
+          "$ref": "#/definitions/UserInfo"
+        },
+        "msgs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Msg"
+          }
+        }
+      }
+    },
+    "UserInfo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "domainRootId",
+        "emailConfirmed",
+        "createDate"
+      ],
+      "properties": {
+        "domainRootId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "emailConfirmed": {
+          "type": "boolean"
+        },
+        "userId": {
+          "type": "string"
+        },
+        "givenName": {
+          "type": "string"
+        },
+        "surname": {
+          "type": "string"
+        },
+        "displayName": {
+          "type": "string"
+        },
+        "gender": {
+          "type": "string"
+        },
+        "accessToken": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "createDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "roles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UserRoleInfo"
+          }
+        }
+      }
+    },
+    "UserRoleInfo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "recordId",
+        "id"
+      ],
+      "properties": {
+        "recordId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "userId": {
+          "type": "string"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "name": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        }
+      }
+    },
+    "Msg": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "LoginInfo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "domainRootId"
+      ],
+      "properties": {
+        "domainRootId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "id": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "deviceReg": {
+          "$ref": "#/definitions/DeviceReg"
+        }
+      }
+    },
+    "DeviceReg": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "platform"
+      ],
+      "properties": {
+        "platform": {
+          "$ref": "#/definitions/Platform"
+        },
+        "deviceID": {
+          "type": "string"
+        },
+        "pushToken": {
+          "type": "string"
+        }
+      }
+    },
+    "Platform": {
+      "type": "string",
+      "description": "",
+      "x-enumNames": [
+        "W",
+        "A",
+        "I"
+      ],
+      "enum": [
+        "W",
+        "A",
+        "I"
+      ]
+    },
+    "MobileViewModel": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "msg": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PostRecord"
+          }
+        }
+      }
+    },
+    "PostRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "zoneEditDatetime",
+        "catId",
+        "stateCode",
+        "seq"
+      ],
+      "properties": {
+        "parentCategory": {
+          "$ref": "#/definitions/Category"
+        },
+        "category": {
+          "$ref": "#/definitions/Category"
+        },
+        "prices": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PriceInfo"
+          }
+        },
+        "images": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/FileRecord"
+          }
+        },
+        "videos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/FileRecord"
+          }
+        },
+        "thumbPath": {
+          "type": "string"
+        },
+        "itemPath": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CategoryPair"
+          }
+        },
+        "labels": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CatLabelGroup"
+          }
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PostLink"
+          }
+        },
+        "childs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PostRecord"
+          }
+        },
+        "zoneEditDatetime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "userId": {
+          "type": "string"
+        },
+        "postId": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "textMsg": {
+          "type": "string"
+        },
+        "catId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "stateCode": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "parentId": {
+          "type": "string"
+        },
+        "seq": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "extRef": {
+          "type": "string"
+        }
+      }
+    },
+    "Category": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "parentId",
+        "catId",
+        "typeCode",
+        "stateCode",
+        "subTypeCode",
+        "seq"
+      ],
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "parentId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "name": {
+          "type": "string"
+        },
+        "catId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "typeCode": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "stateCode": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "subTypeCode": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "seq": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "PriceInfo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "cost",
+        "price"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "cost": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "price": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "propId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "postId": {
+          "type": "string"
+        },
+        "prop": {
+          "$ref": "#/definitions/PostProp"
+        },
+        "propCode": {
+          "type": "string"
+        }
+      }
+    },
+    "PostProp": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "catIds": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "postId": {
+          "type": "string"
+        },
+        "catPairs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CategoryPair"
+          }
+        }
+      }
+    },
+    "CategoryPair": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "parent": {
+          "$ref": "#/definitions/Category"
+        },
+        "child": {
+          "$ref": "#/definitions/Category"
+        }
+      }
+    },
+    "FileRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "postFileId",
+        "fileID",
+        "fileSize",
+        "stateCode",
+        "seq"
+      ],
+      "properties": {
+        "postFileId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "postId": {
+          "type": "string"
+        },
+        "fileID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "userId": {
+          "type": "string"
+        },
+        "fileType": {
+          "type": "string"
+        },
+        "fileName": {
+          "type": "string"
+        },
+        "fileSize": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "category": {
+          "type": "string"
+        },
+        "fileMsg": {
+          "type": "string"
+        },
+        "recordDateUtc": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "path": {
+          "type": "string"
+        },
+        "thumbPath": {
+          "type": "string"
+        },
+        "textContent": {
+          "type": "string"
+        },
+        "stateCode": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "seq": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "CatLabelGroup": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "label": {
+          "$ref": "#/definitions/CatLabelBase"
+        },
+        "parent": {
+          "$ref": "#/definitions/Category"
+        },
+        "child": {
+          "$ref": "#/definitions/Category"
+        }
+      }
+    },
+    "CatLabelBase": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "catId",
+        "seq",
+        "stateCode"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "catId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "label": {
+          "type": "string"
+        },
+        "text0": {
+          "type": "string"
+        },
+        "text1": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        },
+        "seq": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "stateCode": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "PostLink": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "seq",
+        "id",
+        "linkType"
+      ],
+      "properties": {
+        "seq": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "linkUrl": {
+          "type": "string"
+        },
+        "linkTitle": {
+          "type": "string"
+        },
+        "postId": {
+          "type": "string"
+        },
+        "linkImg": {
+          "type": "string"
+        },
+        "linkType": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "linkText": {
+          "type": "string"
+        },
+        "imgThumb": {
+          "type": "string"
+        }
+      }
+    },
+    "MessageViewModel": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "FilterResultOfQa": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Qa"
+          }
+        },
+        "filter": {
+          "$ref": "#/definitions/BaseFilter"
+        }
+      }
+    },
+    "Qa": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "domainId",
+        "stateCode",
+        "createDateUtc"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "toId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "domainName": {
+          "type": "string"
+        },
+        "domainId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "toUserId": {
+          "type": "string"
+        },
+        "byUserId": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "query": {
+          "type": "string"
+        },
+        "msg": {
+          "type": "string"
+        },
+        "stateCode": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "createDateUtc": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "replies": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Qa"
+          }
+        },
+        "asker": {
+          "$ref": "#/definitions/UserInfo"
+        }
+      }
+    },
+    "BaseFilter": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "count",
+        "page",
+        "pageSize",
+        "skip"
+      ],
+      "properties": {
+        "count": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "page": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "skip": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "CatGroup": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "parent": {
+          "$ref": "#/definitions/Category"
+        },
+        "childs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Category"
+          }
+        }
+      }
+    },
+    "CartRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "priceId",
+        "quant"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "priceId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "quant": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "RetOfCartRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ok"
+      ],
+      "properties": {
+        "ok": {
+          "type": "boolean"
+        },
+        "value": {
+          "$ref": "#/definitions/CartRecord"
+        },
+        "msgs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Msg"
+          }
+        }
+      }
+    },
+    "MasterOrder": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "domainShopId",
+        "createDateUtc",
+        "contactId"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "domainShopId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "createDateUtc": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "userIp": {
+          "type": "string"
+        },
+        "contactId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "userMsgs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/KeyVal"
+          }
+        },
+        "cartRecords": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CartRecord"
+          }
+        }
+      }
+    },
+    "KeyVal": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "key": {
+          "type": "string"
+        },
+        "val": {
+          "type": "string"
+        }
+      }
+    },
+    "RetOfOrderInfo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ok"
+      ],
+      "properties": {
+        "ok": {
+          "type": "boolean"
+        },
+        "value": {
+          "$ref": "#/definitions/OrderInfo"
+        },
+        "msgs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Msg"
+          }
+        }
+      }
+    },
+    "OrderInfo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "createUtc",
+        "id",
+        "contactId",
+        "stateCode",
+        "orderType",
+        "localCreateDate"
+      ],
+      "properties": {
+        "shopMsg": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "string"
+        },
+        "shopUserId": {
+          "type": "string"
+        },
+        "createUtc": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "contactId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "userMsg": {
+          "type": "string"
+        },
+        "stateCode": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "orderType": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "stateText": {
+          "type": "string"
+        },
+        "localCreateDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "cartRecords": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CartRecord"
+          }
+        }
+      }
+    },
+    "OrderDetail": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "orderTotal",
+        "createUtc",
+        "id",
+        "contactId",
+        "stateCode",
+        "orderType",
+        "localCreateDate"
+      ],
+      "properties": {
+        "shop": {
+          "$ref": "#/definitions/ShopInfo"
+        },
+        "payments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Payment"
+          }
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CartItemDetail"
+          }
+        },
+        "orderExtras": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CatLabelGroup"
+          }
+        },
+        "contact": {
+          "$ref": "#/definitions/Contact"
+        },
+        "orderTotal": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "shopMsg": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "string"
+        },
+        "shopUserId": {
+          "type": "string"
+        },
+        "createUtc": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "contactId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "userMsg": {
+          "type": "string"
+        },
+        "stateCode": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "orderType": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "stateText": {
+          "type": "string"
+        },
+        "localCreateDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "cartRecords": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CartRecord"
+          }
+        }
+      }
+    },
+    "ShopInfo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "lang",
+        "isCartAllowed",
+        "shopId",
+        "stateCode",
+        "catId",
+        "viewCatId",
+        "repShopId",
+        "pickupEnabled",
+        "ownPickupEnabled",
+        "tagFilterable",
+        "payCashEnabled",
+        "payFpsEnabled",
+        "payAtmEnabled",
+        "payPalEnabled",
+        "payMeEnabled",
+        "payAliEnabled",
+        "payWechatEnabled"
+      ],
+      "properties": {
+        "tags": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CategoryPair"
+          }
+        },
+        "mainCat": {
+          "$ref": "#/definitions/CategoryPair"
+        },
+        "agentInfo": {
+          "$ref": "#/definitions/ShopInfo"
+        },
+        "lang": {
+          "$ref": "#/definitions/Lang"
+        },
+        "logoPath": {
+          "type": "string"
+        },
+        "isCartAllowed": {
+          "type": "boolean"
+        },
+        "images": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ImgInfo"
+          }
+        },
+        "infoLabels": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CatGroupedLabels"
+          }
+        },
+        "ui": {
+          "$ref": "#/definitions/UiTheme"
+        },
+        "itemSpaPath": {
+          "type": "string"
+        },
+        "shopId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "stateCode": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "shopUserId": {
+          "type": "string"
+        },
+        "shopName": {
+          "type": "string"
+        },
+        "catId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "viewCatId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "intro": {
+          "type": "string"
+        },
+        "shopCode": {
+          "type": "string"
+        },
+        "domainName": {
+          "type": "string"
+        },
+        "repShopId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "uiTheme": {
+          "type": "string"
+        },
+        "uiBody": {
+          "type": "string"
+        },
+        "uiListing": {
+          "type": "string"
+        },
+        "uiLogo": {
+          "type": "string"
+        },
+        "pickupEnabled": {
+          "type": "boolean"
+        },
+        "ownPickupEnabled": {
+          "type": "boolean"
+        },
+        "tagFilterable": {
+          "type": "boolean"
+        },
+        "payCashEnabled": {
+          "type": "boolean"
+        },
+        "payFpsEnabled": {
+          "type": "boolean"
+        },
+        "payAtmEnabled": {
+          "type": "boolean"
+        },
+        "payPalEnabled": {
+          "type": "boolean"
+        },
+        "payMeEnabled": {
+          "type": "boolean"
+        },
+        "payAliEnabled": {
+          "type": "boolean"
+        },
+        "payWechatEnabled": {
+          "type": "boolean"
+        }
+      }
+    },
+    "Lang": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "English",
+        "Chinese"
+      ],
+      "enum": [
+        0,
+        1
+      ]
+    },
+    "ImgInfo": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "thumb": {
+          "type": "string"
+        },
+        "msg": {
+          "type": "string"
+        },
+        "link": {
+          "type": "string"
+        }
+      }
+    },
+    "CatGroupedLabels": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "category": {
+          "$ref": "#/definitions/Category"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/GroupedLabels"
+          }
+        }
+      }
+    },
+    "GroupedLabels": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "category": {
+          "$ref": "#/definitions/Category"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CatLabelBase"
+          }
+        }
+      }
+    },
+    "UiTheme": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "theme": {
+          "type": "string"
+        },
+        "body": {
+          "type": "string"
+        },
+        "listing": {
+          "type": "string"
+        }
+      }
+    },
+    "Payment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "orderId",
+        "amount",
+        "stateCode"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "method": {
+          "type": "string"
+        },
+        "orderId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "amount": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "stateCode": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "paymentId": {
+          "type": "string"
+        }
+      }
+    },
+    "CartItemDetail": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "postSnapShotId",
+        "valid",
+        "price",
+        "subTotal",
+        "id",
+        "priceId",
+        "quant"
+      ],
+      "properties": {
+        "postSnapShotId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "valid": {
+          "type": "boolean"
+        },
+        "postId": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "price": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "propCats": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CategoryPair"
+          }
+        },
+        "post": {
+          "$ref": "#/definitions/PostRecord"
+        },
+        "subTotal": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "priceId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "quant": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "Contact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "pickContactId",
+        "contactType",
+        "phoneAreaNo",
+        "phone",
+        "cityNo"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "pickContactId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "pickContact": {
+          "$ref": "#/definitions/Contact"
+        },
+        "contactType": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "title": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "phoneAreaNo": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "phone": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "cityNo": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "address": {
+          "type": "string"
+        },
+        "phoneDetail": {
+          "$ref": "#/definitions/CatLabelGroup"
+        },
+        "cityDetail": {
+          "$ref": "#/definitions/CatLabelGroup"
+        }
+      }
+    },
+    "OrderDetailViewModel": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "item": {
+          "$ref": "#/definitions/OrderDetail"
+        },
+        "paypalEnvironment": {
+          "type": "string"
+        },
+        "pgMetas": {
+          "$ref": "#/definitions/PageMetas"
+        },
+        "shop": {
+          "$ref": "#/definitions/ShopInfo"
+        },
+        "pageName": {
+          "type": "string"
+        },
+        "listingCatGroups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CatGroup"
+          }
+        },
+        "itemTagCatGroups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CatGroup"
+          }
+        },
+        "currency": {
+          "type": "string"
+        },
+        "payAccounts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PaymentAccount"
+          }
+        }
+      }
+    },
+    "PageMetas": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        }
+      }
+    },
+    "PaymentAccount": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "accountType": {
+          "type": "string"
+        },
+        "info": {
+          "type": "string"
+        },
+        "accountNo": {
+          "type": "string"
+        }
+      }
+    },
+    "FilterResultOfOrderDetail": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/OrderDetail"
+          }
+        },
+        "filter": {
+          "$ref": "#/definitions/BaseFilter"
+        }
+      }
+    },
+    "RetOfContact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ok"
+      ],
+      "properties": {
+        "ok": {
+          "type": "boolean"
+        },
+        "value": {
+          "$ref": "#/definitions/Contact"
+        },
+        "msgs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Msg"
+          }
+        }
+      }
+    },
+    "FilterResultOfContact": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Contact"
+          }
+        },
+        "filter": {
+          "$ref": "#/definitions/BaseFilter"
+        }
+      }
+    },
+    "FilterResultOfCartItemDetailGroup": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CartItemDetailGroup"
+          }
+        },
+        "filter": {
+          "$ref": "#/definitions/BaseFilter"
+        }
+      }
+    },
+    "CartItemDetailGroup": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "shop": {
+          "$ref": "#/definitions/ShopInfo"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CartItemDetail"
+          }
+        }
+      }
+    },
+    "RetOfPostLink": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ok"
+      ],
+      "properties": {
+        "ok": {
+          "type": "boolean"
+        },
+        "value": {
+          "$ref": "#/definitions/PostLink"
+        },
+        "msgs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Msg"
+          }
+        }
+      }
+    },
+    "RetOfFilterResultOfShopInfo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ok"
+      ],
+      "properties": {
+        "ok": {
+          "type": "boolean"
+        },
+        "value": {
+          "$ref": "#/definitions/FilterResultOfShopInfo"
+        },
+        "msgs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Msg"
+          }
+        }
+      }
+    },
+    "FilterResultOfShopInfo": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ShopInfo"
+          }
+        },
+        "filter": {
+          "$ref": "#/definitions/BaseFilter"
+        }
+      }
+    },
+    "RetOfShopInfo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ok"
+      ],
+      "properties": {
+        "ok": {
+          "type": "boolean"
+        },
+        "value": {
+          "$ref": "#/definitions/ShopInfo"
+        },
+        "msgs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Msg"
+          }
+        }
+      }
+    },
+    "RetOfObject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ok"
+      ],
+      "properties": {
+        "ok": {
+          "type": "boolean"
+        },
+        "value": {},
+        "msgs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Msg"
+          }
+        }
+      }
+    },
+    "ShopBase": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "shopId",
+        "stateCode",
+        "catId",
+        "viewCatId",
+        "repShopId",
+        "pickupEnabled",
+        "ownPickupEnabled",
+        "tagFilterable",
+        "payCashEnabled",
+        "payFpsEnabled",
+        "payAtmEnabled",
+        "payPalEnabled",
+        "payMeEnabled",
+        "payAliEnabled",
+        "payWechatEnabled"
+      ],
+      "properties": {
+        "shopId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "stateCode": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "shopUserId": {
+          "type": "string"
+        },
+        "shopName": {
+          "type": "string"
+        },
+        "catId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "viewCatId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "intro": {
+          "type": "string"
+        },
+        "shopCode": {
+          "type": "string"
+        },
+        "domainName": {
+          "type": "string"
+        },
+        "repShopId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "uiTheme": {
+          "type": "string"
+        },
+        "uiBody": {
+          "type": "string"
+        },
+        "uiListing": {
+          "type": "string"
+        },
+        "uiLogo": {
+          "type": "string"
+        },
+        "pickupEnabled": {
+          "type": "boolean"
+        },
+        "ownPickupEnabled": {
+          "type": "boolean"
+        },
+        "tagFilterable": {
+          "type": "boolean"
+        },
+        "payCashEnabled": {
+          "type": "boolean"
+        },
+        "payFpsEnabled": {
+          "type": "boolean"
+        },
+        "payAtmEnabled": {
+          "type": "boolean"
+        },
+        "payPalEnabled": {
+          "type": "boolean"
+        },
+        "payMeEnabled": {
+          "type": "boolean"
+        },
+        "payAliEnabled": {
+          "type": "boolean"
+        },
+        "payWechatEnabled": {
+          "type": "boolean"
+        }
+      }
+    },
+    "RetOfListOfFileRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ok"
+      ],
+      "properties": {
+        "ok": {
+          "type": "boolean"
+        },
+        "value": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/FileRecord"
+          }
+        },
+        "msgs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Msg"
+          }
+        }
+      }
+    },
+    "RetOfUserRoleInfo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ok"
+      ],
+      "properties": {
+        "ok": {
+          "type": "boolean"
+        },
+        "value": {
+          "$ref": "#/definitions/UserRoleInfo"
+        },
+        "msgs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Msg"
+          }
+        }
+      }
+    },
+    "RoleInfo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "name": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        }
+      }
+    },
+    "RetOfRoleInfo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ok"
+      ],
+      "properties": {
+        "ok": {
+          "type": "boolean"
+        },
+        "value": {
+          "$ref": "#/definitions/RoleInfo"
+        },
+        "msgs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Msg"
+          }
+        }
+      }
+    },
+    "CatConfigLabel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "catId",
+        "seq",
+        "stateCode"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "catId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "label": {
+          "type": "string"
+        },
+        "text0": {
+          "type": "string"
+        },
+        "text1": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        },
+        "seq": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "stateCode": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "RetOfCatConfigLabel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ok"
+      ],
+      "properties": {
+        "ok": {
+          "type": "boolean"
+        },
+        "value": {
+          "$ref": "#/definitions/CatConfigLabel"
+        },
+        "msgs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Msg"
+          }
+        }
+      }
+    },
+    "OrderCatLabel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "orderID",
+        "amount",
+        "id",
+        "catId",
+        "seq",
+        "stateCode"
+      ],
+      "properties": {
+        "orderID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "amount": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "catId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "label": {
+          "type": "string"
+        },
+        "text0": {
+          "type": "string"
+        },
+        "text1": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        },
+        "seq": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "stateCode": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "RetOfOrderCatLabel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ok"
+      ],
+      "properties": {
+        "ok": {
+          "type": "boolean"
+        },
+        "value": {
+          "$ref": "#/definitions/OrderCatLabel"
+        },
+        "msgs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Msg"
+          }
+        }
+      }
+    },
+    "RetOfPostRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ok"
+      ],
+      "properties": {
+        "ok": {
+          "type": "boolean"
+        },
+        "value": {
+          "$ref": "#/definitions/PostRecord"
+        },
+        "msgs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Msg"
+          }
+        }
+      }
+    },
+    "RetOfListOfPostProp": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ok"
+      ],
+      "properties": {
+        "ok": {
+          "type": "boolean"
+        },
+        "value": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PostProp"
+          }
+        },
+        "msgs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Msg"
+          }
+        }
+      }
+    },
+    "RetOfInt64": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ok",
+        "value"
+      ],
+      "properties": {
+        "ok": {
+          "type": "boolean"
+        },
+        "value": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "msgs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Msg"
+          }
+        }
+      }
+    },
+    "RetOfListOfPriceInfo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ok"
+      ],
+      "properties": {
+        "ok": {
+          "type": "boolean"
+        },
+        "value": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PriceInfo"
+          }
+        },
+        "msgs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Msg"
+          }
+        }
+      }
+    },
+    "PostBase": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "catId",
+        "stateCode",
+        "seq"
+      ],
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "postId": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "textMsg": {
+          "type": "string"
+        },
+        "catId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "stateCode": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "parentId": {
+          "type": "string"
+        },
+        "seq": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "extRef": {
+          "type": "string"
+        }
+      }
+    },
+    "PsCatLabel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "catId",
+        "seq",
+        "stateCode"
+      ],
+      "properties": {
+        "postId": {
+          "type": "string"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "catId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "label": {
+          "type": "string"
+        },
+        "text0": {
+          "type": "string"
+        },
+        "text1": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        },
+        "seq": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "stateCode": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "PsCatId": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "catId",
+        "stateCode"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "postId": {
+          "type": "string"
+        },
+        "catId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "stateCode": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "ShopCatTag": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "shopId",
+        "catId"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "shopId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "catId": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "ShopCatLabel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "catId",
+        "seq",
+        "stateCode"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "catId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "label": {
+          "type": "string"
+        },
+        "text0": {
+          "type": "string"
+        },
+        "text1": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        },
+        "seq": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "stateCode": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "RetOfFrontendCatLabel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ok"
+      ],
+      "properties": {
+        "ok": {
+          "type": "boolean"
+        },
+        "value": {
+          "$ref": "#/definitions/FrontendCatLabel"
+        },
+        "msgs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Msg"
+          }
+        }
+      }
+    },
+    "FrontendCatLabel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "catId",
+        "seq",
+        "stateCode"
+      ],
+      "properties": {
+        "frnImgPath": {
+          "type": "string"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "catId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "label": {
+          "type": "string"
+        },
+        "text0": {
+          "type": "string"
+        },
+        "text1": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        },
+        "seq": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "stateCode": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "RetOfShopCatLabel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ok"
+      ],
+      "properties": {
+        "ok": {
+          "type": "boolean"
+        },
+        "value": {
+          "$ref": "#/definitions/ShopCatLabel"
+        },
+        "msgs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Msg"
+          }
+        }
+      }
+    },
+    "RetOfCategory": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ok"
+      ],
+      "properties": {
+        "ok": {
+          "type": "boolean"
+        },
+        "value": {
+          "$ref": "#/definitions/Category"
+        },
+        "msgs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Msg"
+          }
+        }
+      }
+    },
+    "FilterResultOfPostRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PostRecord"
+          }
+        },
+        "filter": {
+          "$ref": "#/definitions/BaseFilter"
+        }
+      }
+    },
+    "RetOfFilterResultOfFileRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ok"
+      ],
+      "properties": {
+        "ok": {
+          "type": "boolean"
+        },
+        "value": {
+          "$ref": "#/definitions/FilterResultOfFileRecord"
+        },
+        "msgs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Msg"
+          }
+        }
+      }
+    },
+    "FilterResultOfFileRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/FileRecord"
+          }
+        },
+        "filter": {
+          "$ref": "#/definitions/BaseFilter"
+        }
+      }
+    },
+    "RetOfDashProfile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ok"
+      ],
+      "properties": {
+        "ok": {
+          "type": "boolean"
+        },
+        "value": {
+          "$ref": "#/definitions/DashProfile"
+        },
+        "msgs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Msg"
+          }
+        }
+      }
+    },
+    "DashProfile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "isShopKeeper",
+        "isAgent",
+        "isManager",
+        "isAdmin"
+      ],
+      "properties": {
+        "accountUser": {
+          "$ref": "#/definitions/UserInfo"
+        },
+        "isShopKeeper": {
+          "type": "boolean"
+        },
+        "isAgent": {
+          "type": "boolean"
+        },
+        "isManager": {
+          "type": "boolean"
+        },
+        "isAdmin": {
+          "type": "boolean"
+        }
+      }
+    },
+    "ShopsViewModel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "isShopFilterOnly"
+      ],
+      "properties": {
+        "isShopFilterOnly": {
+          "type": "boolean"
+        },
+        "filter": {
+          "$ref": "#/definitions/Filterer"
+        },
+        "posts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PostRecord"
+          }
+        },
+        "pgMetas": {
+          "$ref": "#/definitions/PageMetas"
+        },
+        "shop": {
+          "$ref": "#/definitions/ShopInfo"
+        },
+        "pageName": {
+          "type": "string"
+        },
+        "listingCatGroups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CatGroup"
+          }
+        },
+        "itemTagCatGroups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CatGroup"
+          }
+        },
+        "currency": {
+          "type": "string"
+        },
+        "payAccounts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PaymentAccount"
+          }
+        }
+      }
+    },
+    "Filterer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "shopId",
+        "hasCatStates",
+        "hasStates",
+        "hasCats",
+        "hasTags",
+        "hasPostIds",
+        "hasParentIds",
+        "hasCatSubTypes",
+        "hasSorts",
+        "count",
+        "page",
+        "pageSize",
+        "skip"
+      ],
+      "properties": {
+        "shopCode": {
+          "type": "string"
+        },
+        "shopId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "shopUserId": {
+          "type": "string"
+        },
+        "parentIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "postIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "cats": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "catSubTypes": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "states": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "catStates": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "sorts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortOrder"
+          }
+        },
+        "keyword": {
+          "type": "string"
+        },
+        "hasCatStates": {
+          "type": "boolean"
+        },
+        "hasStates": {
+          "type": "boolean"
+        },
+        "hasCats": {
+          "type": "boolean"
+        },
+        "hasTags": {
+          "type": "boolean"
+        },
+        "hasPostIds": {
+          "type": "boolean"
+        },
+        "hasParentIds": {
+          "type": "boolean"
+        },
+        "hasCatSubTypes": {
+          "type": "boolean"
+        },
+        "hasSorts": {
+          "type": "boolean"
+        },
+        "count": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "page": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "skip": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "SortOrder": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "isAsc"
+      ],
+      "properties": {
+        "field": {
+          "type": "string"
+        },
+        "isAsc": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}
