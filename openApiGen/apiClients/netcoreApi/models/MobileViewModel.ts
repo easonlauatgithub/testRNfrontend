@@ -47,12 +47,10 @@ export interface MobileViewModel {
 }
 
 export function MobileViewModelFromJSON(json: any): MobileViewModel {
-    console.log("easontesting - MobileViewModel.ts MobileViewModelFromJSON");
-    return MobileViewModelFromJSONTyped(json, false);
+    return MobileViewModelFromJSONTyped(json, false); 
 }
 
 export function MobileViewModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): MobileViewModel {
-    console.log("easontesting - MobileViewModel.ts MobileViewModelFromJSONTyped");
     if ((json === undefined) || (json === null)) {
         return json;
     }

@@ -133,14 +133,12 @@ export class AppServerApi extends runtime.BaseAPI {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
-
         const response = await this.request({
             path: `/api/AppServer/Index`,
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-
         return new runtime.JSONApiResponse(response, (jsonValue) => MobileViewModelFromJSON(jsonValue));
     }
 

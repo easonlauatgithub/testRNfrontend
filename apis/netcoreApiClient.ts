@@ -87,7 +87,7 @@ export class AppApiClient {
     }
 
     async getIndex(): Promise<IndexViewModel | null> {
-        let ret = await this.client.appServerIndex();
+        var ret = await this.client.appServerIndex();
         console.log('ret of index',ret);
         if (ret) {
             let md = new IndexViewModel();
